@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <app-tags v-model="tags" color="primary"></app-tags>
+    {{ tags }}
+    <hr>
+    <app-tags v-model="tags2" color="danger"></app-tags>
+    {{ tags2 }}
+    <hr>
+    <app-tags v-model="tags3" color="success"></app-tags>
+    {{ tags3 }}
+    <hr>
+    <app-tags v-model="tags4" color="warning"></app-tags>
+    {{ tags4 }}
+    <hr>
+    <app-tags v-model="tags5" color="info"></app-tags>
+    {{ tags5 }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TagsGny from './components/TagsGny.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components : {
+    appTags : TagsGny
+  },
+  data(){
+    return {
+      tags : "deneme,test,gökçe",
+      tags2 : "bilgisayar,defter,klavye",
+      tags3 : "deneme",
+      tags4 : "klavye",
+      tags5 : "gökçe",
+      
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body{
+    font-family: sans-serif;
+  }
+  
 </style>
